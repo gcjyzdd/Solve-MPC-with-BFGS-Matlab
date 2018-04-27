@@ -51,17 +51,26 @@ figure
 
 subplot(511)
 plot(Data(1,:), Data(2,:), '*-')
+title('Trajectory')
+xlabel('x [m]')
+ylabel('y [m]')
 
 subplot(512)
 plot(Data(5,:))
 ylim([-0.3 0.3])
 xlim([0 50])
+title('CTE')
+
 subplot(513)
 plot(Data(4,:))
 xlim([0 50])
+title('Velocity')
+
 subplot(514)
 plot(INPUT(1,:))
 xlim([0 50])
+title('Steer')
 subplot(515)
 plot(INPUT(2,:))
 xlim([0 50])
+title('Acceleration')
