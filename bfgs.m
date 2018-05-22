@@ -10,6 +10,7 @@ k = 0;
 x0 = input;
 x = x0;
 fit = evalFitness(setting, arg, x0);
+val = fit;
 % Bk = getHessian(setting, arg, x0,fit) + 1e-6*eye(N);
 Bk = eye(N);
 bad = 0;
@@ -28,6 +29,10 @@ while(k<maxk && bad<stop_step)
             mk = m;break;
         end
         m = m+1;
+        if (m>20)
+            x = input;
+            return;
+        end
     end
     % fprintf('mk = %d\n', mk);
     x = x0 +rho^mk*dk;
