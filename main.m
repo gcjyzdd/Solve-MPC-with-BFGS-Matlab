@@ -29,9 +29,9 @@ Data = zeros(6,iters);
 INPUT = zeros(2, iters);
 tic
 for i=1:iters
-    % [x, val, step] = bfgs_mex(setting, arg, input);
-    [x, val, step] = bfgs(setting, arg, input);
-    fprintf('i = %d, val = %4.3f,\tstep = %d\n', i,val,step)
+    [x, val, step] = bfgs_mex(setting, arg, input);
+    % [x, val, step] = bfgs(setting, arg, input);
+    % fprintf('i = %d, val = %4.3f,\tstep = %d\n', i,val,step)
     states = getStates(setting, arg, x);
     arg.x = states(1,2);
     arg.y = states(2,2);
